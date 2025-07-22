@@ -5,6 +5,7 @@ import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { AppService } from './app.service';
       synchronize: true,
       migrations: ['dist/migration/*.ts'],
     }),
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
